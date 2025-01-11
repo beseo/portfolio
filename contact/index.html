@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>Contact</title>
 </head>
 <body>
@@ -13,26 +13,29 @@
             <li><a href = "/projects/index.html">Projects</a></li>
             <li><a href = "/contact/index.html">Contact</a></li>
             <li><a href="https://github.com/beseo" target="_blank">Github</a></li>
+            <li><a href = "/resume/index.html">Resume</a></li>
         </ul>
-        
     </nav>
+
     <h1>Contact</h1>
     
+    <form action="mailto:beseo@ucsd.edu" method = "POST" enctype="text/plain">
+        <label>Email:
+            <input type="email" name="email" value = "johndoe@email.com">
+        </label>
 
-    <form method = "POST" action="mailto:beseo@ucsd.edu" enctype="text/plain">
-        <label for="email">
-            Email: 
-            <input type="email" name="email">
+        <label>
+            Subject:
+            <input name = "subject" value = "some subject">
         </label>
-        <label for="subject">
-            Subject: 
-            <input name = "subject">
+        
+        <label>
+            Body:
+            <textarea name = "body">Test Message</textarea>
         </label>
-        <label for = "body">
-            Body: 
-            <textarea name = "body"></textarea>
-        </label>
+
         <button>Submit</button>
     </form>
+    
 </body>
 </html>
