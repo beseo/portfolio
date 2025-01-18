@@ -95,3 +95,18 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   text-wrap: balance;
 }
+
+#resume-name {
+  text-align: center;
+}
+
+#info-section {
+  text-align: center;
+}
+
+hr {
+  height: 2px;
+  background: var(--color-accent);
+  margin: 1.5rem auto;
+  width: 100%;
+}
