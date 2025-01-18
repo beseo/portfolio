@@ -3,6 +3,35 @@ body {
          and use the OS’s UI font as the website font
        */
     font: 100%/1.5 system-ui;
-    max-width: 90ch;
+    max-width: 150ch;
     margin-inline: auto;
+    padding: 13ch;
   }
+
+ul, li {
+  display: contents;
+}
+
+nav {
+  display: flex;
+  margin-bottom: 1em;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: oklch(80% 3% 200);
+}
+
+nav a.current {
+  border-bottom-width: 0.4em;
+  border-bottom-style: solid;
+  border-bottom-color: oklch(80% 3% 200);
+  padding: 0.3em
+}
+
+ul a {
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+}
+
