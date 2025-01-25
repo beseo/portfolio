@@ -6,10 +6,12 @@ function $$(selector, context = document) {
 // step 2
 // navLinks = $$("nav a");
 // currentLink?.classList.add('current');
-const isPages = window.location.hostname.includes('github.io');
-const baseUrl = isPages ? '/portfolio/' : '/';
 
-document.querySelector('base').setAttribute('href', baseUrl);
+
+// const isPages = window.location.hostname.includes('github.io');
+// const baseUrl = isPages ? '/portfolio/' : '/';
+
+// document.querySelector('base').setAttribute('href', baseUrl);
 
 let pages = [
   {url: '', title: 'Home'},
