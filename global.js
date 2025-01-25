@@ -9,9 +9,9 @@ function $$(selector, context = document) {
 
 let pages = [
   {url: '', title: 'Home'},
-  {url: 'projects/index.html', title: 'Projects'},
-  {url: 'resume/index.html', title: 'Resume'},
-  {url: 'contact/index.html', title: 'Contact'},
+  {url: 'projects/', title: 'Projects'},
+  {url: 'resume/', title: 'Resume'},
+  {url: 'contact/', title: 'Contact'},
   {url: 'https://github.com/beseo', title: 'GitHub'}
 ];
 
@@ -25,8 +25,9 @@ for (let p of pages) {
   let a = document.createElement('a');
   
   const ARE_WE_HOME = document.documentElement.classList.contains('home');
-  url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
-
+  if (!ARE_WE_HOME && !url.startsWith('http')) {
+    url = '../' + url;
+  }
   a.href = url;
   a.textContent = title;
   nav.append(a);
