@@ -21,24 +21,23 @@ document.body.prepend(nav);
 for (let p of pages) {
   let url = p.url;
   let title = p.title;
-
-  let a = document.createElement('a');
-  
   const ARE_WE_HOME = document.documentElement.classList.contains('home');
   if (!ARE_WE_HOME && !url.startsWith('http')) {
     url = '../' + url;
   }
+  let a = document.createElement('a');
   a.href = url;
   a.textContent = title;
+  
   nav.append(a);
-
+  
   if (a.host === location.host && a.pathname === location.pathname) {
     a.classList.add('current');
   }
   if (a.host != location.host) {
     a.target = "_blank";
   }
-
+  
 
 }
 
