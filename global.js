@@ -8,10 +8,10 @@ function $$(selector, context = document) {
 // currentLink?.classList.add('current');
 
 let pages = [
-  {url: '', title: 'Home'},
-  {url: 'projects/', title: 'Projects'},
-  {url: 'resume/', title: 'Resume'},
-  {url: 'contact/', title: 'Contact'},
+  {url: 'index.html', title: 'Home'},
+  {url: 'projects/index.html', title: 'Projects'},
+  {url: 'resume/index.html', title: 'Resume'},
+  {url: 'contact/index.html', title: 'Contact'},
   {url: 'https://github.com/beseo', title: 'GitHub'}
 ];
 
@@ -19,12 +19,13 @@ let nav = document.createElement('nav');
 document.body.prepend(nav);
 
 for (let p of pages) {
-  let url = 'portfolio/' + p.url;
+  let url = p.url;
   let title = p.title;
   const ARE_WE_HOME = document.documentElement.classList.contains('home');
   if (!ARE_WE_HOME && !url.startsWith('http')) {
     url = '../' + url;
   }
+  
   let a = document.createElement('a');
   a.href = url;
   a.textContent = title;
