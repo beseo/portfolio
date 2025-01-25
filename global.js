@@ -6,12 +6,16 @@ function $$(selector, context = document) {
 // step 2
 // navLinks = $$("nav a");
 // currentLink?.classList.add('current');
+const isPages = window.location.hostname.includes('github.io');
+const baseUrl = isPages ? '/portfolio/' : '/';
+
+document.querySelector('base').setAttribute('href', baseUrl);
 
 let pages = [
-  {url: '../index.html', title: 'Home'},
-  {url: '../projects/index.html', title: 'Projects'},
-  {url: '../resume/index.html', title: 'Resume'},
-  {url: '../contact/index.html', title: 'Contact'},
+  {url: '', title: 'Home'},
+  {url: 'projects/', title: 'Projects'},
+  {url: 'resume/', title: 'Resume'},
+  {url: 'contact/', title: 'Contact'},
   {url: 'https://github.com/beseo', title: 'GitHub'}
 ];
 
@@ -21,10 +25,10 @@ document.body.prepend(nav);
 for (let p of pages) {
   let url = p.url;
   let title = p.title;
-  // const ARE_WE_HOME = document.documentElement.classList.contains('home');
-  // if (!ARE_WE_HOME && !url.startsWith('http')) {
-  //   url = '../' + url;
-  // }
+  const ARE_WE_HOME = document.documentElement.classList.contains('home');
+  if (!ARE_WE_HOME && !url.startsWith('http')) {
+    url = '../' + url;
+  }
   
   let a = document.createElement('a');
   a.href = url;
