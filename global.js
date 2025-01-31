@@ -14,7 +14,7 @@ function $$(selector, context = document) {
 // document.querySelector('base').setAttribute('href', baseUrl);
 let repoName = '/portfolio/';
 let pages = [
-  {url: repoName + '', title: 'Home'},
+  {url: '', title: 'Home'},
   {url: repoName + 'projects/', title: 'Projects'},
   {url: repoName + 'resume/', title: 'Resume'},
   {url: repoName + 'contact/', title: 'Contact'},
