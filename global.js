@@ -12,9 +12,9 @@ function $$(selector, context = document) {
 // const baseUrl = isPages ? '/portfolio/' : '/';
 
 // document.querySelector('base').setAttribute('href', baseUrl);
-let repoName = '../portfolio/';
+let repoName = '/portfolio/';
 let pages = [
-  {url: repoName + '', title: 'Home'},
+  {url: repoName, title: 'Home'},
   {url: repoName + 'projects', title: 'Projects'},
   {url: repoName + 'resume', title: 'Resume'},
   {url: repoName + 'contact', title: 'Contact'},
@@ -29,9 +29,9 @@ for (let p of pages) {
   let title = p.title;
 
   const ARE_WE_HOME = document.documentElement.classList.contains('home');
-  if (!ARE_WE_HOME && !url.startsWith('http')) {
-    url = '../' + url;
-  }
+  // if (!ARE_WE_HOME && !url.startsWith('http')) {
+  //   url = '../' + url;
+  // }
   
   let a = document.createElement('a');
   a.href = url;
