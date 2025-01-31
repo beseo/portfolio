@@ -15,9 +15,9 @@ function $$(selector, context = document) {
 let repoName = 'portfolio';
 let pages = [
   {url: repoName + '', title: 'Home'},
-  {url: repoName + 'projects/', title: 'Projects'},
+  {url: repoName + '/projects/', title: 'Projects'},
   {url: repoName + 'resume/', title: 'Resume'},
-  {url: repoName + 'contact/', title: 'Contact'},
+  {url: repoName + '/contact/', title: 'Contact'},
   {url: 'https://github.com/beseo', title: 'GitHub'}
 ];
 
