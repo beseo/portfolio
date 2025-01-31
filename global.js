@@ -12,8 +12,8 @@ function $$(selector, context = document) {
 // const baseUrl = isPages ? '/portfolio/' : '/';
 
 // document.querySelector('base').setAttribute('href', baseUrl);
-// let repoName = '';
-let repoName = '/portfolio/';
+let repoName = '';
+// let repoName = '/portfolio/';
 let pages = [
   {url: repoName, title: 'Home'},
   {url: repoName + 'projects', title: 'Projects'},
@@ -33,13 +33,11 @@ for (let p of pages) {
   if (!ARE_WE_HOME && !url.startsWith('http')) {
     url = '../' + url;
   }
-  
+
   let a = document.createElement('a');
   a.href = url;
   a.textContent = title;
-  
 
-  
   if (a.host === location.host && a.pathname === location.pathname) {
     a.classList.add('current');
   }
@@ -80,14 +78,34 @@ select.addEventListener('input', function (event) {
 export async function fetchJSON(url) {
   try {
       // Fetch the JSON file from the given URL
+
       const response = await fetch(url);
+      
       if (!response.ok) {
+
         throw new Error(`Failed to fetch projects: ${response.statusText}`);
       }
-      console.log('surprise!');
-      console.log(response);
-
+      const data = await response.json();
+      console.log(data);
+      return data;
   } catch (error) {
       console.error('Error fetching or parsing JSON data:', error);
   }
+}
+
+export function renderProjects(project, containerElement, headingLevel = 'h2') {
+
+  containerElement.innerHTML = '';
+  for (let p of project) {
+    const article = document.createElement('article');
+
+    article.innerHTML = `
+      <h3>${p.title}</h3>
+      <img src="${p.image}" alt="${p.title}">
+      <p>${p.description}</p>
+    `;  
+  
+    containerElement.appendChild(article);
+  }
+
 }
