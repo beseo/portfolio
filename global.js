@@ -30,9 +30,9 @@ for (let p of pages) {
   let title = p.title;
 
   const ARE_WE_HOME = document.documentElement.classList.contains('home');
-  // if (!ARE_WE_HOME && !url.startsWith('http')) {
-  //   url = '../' + url;
-  // }
+  if (!ARE_WE_HOME && !url.startsWith('http')) {
+    url = '../' + url;
+  }
   
   let a = document.createElement('a');
   a.href = url;
