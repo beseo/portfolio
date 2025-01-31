@@ -14,10 +14,10 @@ function $$(selector, context = document) {
 // document.querySelector('base').setAttribute('href', baseUrl);
 let repoName = 'portfolio';
 let pages = [
-  {url: repoName + '', title: 'Home'},
-  {url: repoName + '/projects/', title: 'Projects'},
-  {url: repoName + 'resume/', title: 'Resume'},
-  {url: repoName + '/contact/', title: 'Contact'},
+  {url: '', title: 'Home'},
+  {url: 'projects', title: 'Projects'},
+  {url: 'resume', title: 'Resume'},
+  {url: 'contact', title: 'Contact'},
   {url: 'https://github.com/beseo', title: 'GitHub'}
 ];
 
@@ -27,6 +27,7 @@ document.body.prepend(nav);
 for (let p of pages) {
   let url = p.url;
   let title = p.title;
+
   const ARE_WE_HOME = document.documentElement.classList.contains('home');
   if (!ARE_WE_HOME && !url.startsWith('http')) {
     url = '../' + url;
@@ -36,7 +37,7 @@ for (let p of pages) {
   a.href = url;
   a.textContent = title;
   
-  nav.append(a);
+
   
   if (a.host === location.host && a.pathname === location.pathname) {
     a.classList.add('current');
@@ -44,7 +45,8 @@ for (let p of pages) {
   if (a.host != location.host) {
     a.target = "_blank";
   }
-  
+
+  nav.append(a);
 
 }
 
