@@ -12,7 +12,7 @@ function $$(selector, context = document) {
 // const baseUrl = isPages ? '/portfolio/' : '/';
 
 // document.querySelector('base').setAttribute('href', baseUrl);
-let repoName = 'portfolio/';
+let repoName = '../portfolio/';
 let pages = [
   {url: repoName + '', title: 'Home'},
   {url: repoName + 'projects', title: 'Projects'},
