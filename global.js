@@ -12,12 +12,12 @@ function $$(selector, context = document) {
 // const baseUrl = isPages ? '/portfolio/' : '/';
 
 // document.querySelector('base').setAttribute('href', baseUrl);
-let repoName = 'portfolio';
+let repoName = 'portfolio/';
 let pages = [
-  {url: '', title: 'Home'},
-  {url: 'projects', title: 'Projects'},
-  {url: 'resume', title: 'Resume'},
-  {url: 'contact', title: 'Contact'},
+  {url: repoName + '', title: 'Home'},
+  {url: repoName + 'projects', title: 'Projects'},
+  {url: repoName + 'resume', title: 'Resume'},
+  {url: repoName + 'contact', title: 'Contact'},
   {url: 'https://github.com/beseo', title: 'GitHub'}
 ];
 
