@@ -12,8 +12,8 @@ function $$(selector, context = document) {
 // const baseUrl = isPages ? '/portfolio/' : '/';
 
 // document.querySelector('base').setAttribute('href', baseUrl);
-let repoName = '';
-// let repoName = '/portfolio/';
+// let repoName = '';
+let repoName = '/portfolio/';
 let pages = [
   {url: repoName, title: 'Home'},
   {url: repoName + 'projects', title: 'Projects'},
@@ -84,7 +84,8 @@ export async function fetchJSON(url) {
       if (!response.ok) {
         throw new Error(`Failed to fetch projects: ${response.statusText}`);
       }
-      console.log(response)
+      console.log('surprise!');
+      console.log(response);
 
   } catch (error) {
       console.error('Error fetching or parsing JSON data:', error);
